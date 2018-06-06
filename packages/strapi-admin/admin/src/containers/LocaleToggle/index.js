@@ -16,6 +16,7 @@ import { ButtonDropdown, DropdownItem, DropdownMenu, DropdownToggle } from 'reac
 import { selectLocale } from 'containers/LanguageProvider/selectors';
 import { changeLocale } from 'containers/LanguageProvider/actions';
 import { languages } from 'i18n';
+import gif from '../../assets/gifs/contact_m.gif'
 
 import styles from './styles.scss';
 

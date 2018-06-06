@@ -39,6 +39,7 @@ import makeSelectHomePage from './selectors';
 import reducer from './reducer';
 import saga from './saga';
 import styles from './styles.scss';
+import gif from '../../assets/gifs/contact_m.gif'
 
 const FIRST_BLOCK = [
   {
@@ -175,71 +176,128 @@ export class HomePage extends React.PureComponent {
         <div className="row">
           <div className="col-md-8 col-lg-8">
             <Block>
-              {this.showFirstBlock() &&
-                FIRST_BLOCK.map((value, key) => (
-                  <Sub key={key} {...value} underline={key === 0} bordered={key === 0} />
-                ))}
-              {!this.showFirstBlock() &&
-                WELCOME_AGAIN_BLOCK.concat(articles).map((value, key) => (
-                  <Sub
-                    key={key}
-                    {...value}
-                    bordered={key === 0}
-                    style={key === 1 ? { marginBottom: '33px' } : {}}
-                    underline={key === 0}
-                  />
-                ))}
-              {this.renderButton()}
-              <div className={styles.homePageFlex}>
-                {FIRST_BLOCK_LINKS.map((value, key) => <BlockLink {...value} key={key} />)}
+              <div>
+                <h2>Welcome to The-Artery's Content Management System! 🤓</h2> <br/>
+                <h3>A spiffy API for The-Artery's in-house websites.</h3>
+                <p>  
+                  Current Live Versions: <br/>
+                  <a href='https://www.the-artery.com/'>Main Site</a>  <br/>
+                  <a href='https://client.the-artery.com/General-Reel'>Client Site</a>
+                  
+                </p>
+              </div>
+            </Block>
+
+            <Block>
+              <div>
+                <h2> App Information 🗝️</h2> <br />
+                <h3>Github repo's can be found at the links below (with access): </h3> 
+
+                  <a href='https://github.com/The-Artery-Lab/Client-Website-Frontend'>Client Frontend </a> <br />
+                  <a href='https://github.com/The-Artery-Lab/Client-Website-Frontend'>Main Frontend </a> <br />
+                  <a href='https://github.com/The-Artery-Lab/Client-Website-Frontend'>CMS Frontend </a> <br />
+                  
+                  <br/>
+                <h3>Database Information</h3>
+                <a href='https://mlab.com/'>MLab Home</a>
+              </div>
+            </Block>
+
+            <Block>
+              <h2>Project Upload Information 📽️</h2>
+              <br/>
+              <div>
+                <div>
+                  Project videos are pulled from Vimeo in three sizes for mobile, tablet, and desktop. <br/>
+                  Format: 'https://player.vimeo.com/external/...'
+                </div>
+                <br/>
+                <div>
+                  Project images take three forms according to their role in the site: 
+                  <ol>
+                    <li>Thumbnails: Used on the pillar pages as a link to the project (350 x 350)</li>
+                    <li>Main Cover: Covers the project video on the project's page (single file)</li>
+                    <li>Secondary: Comprises the image gallery of extra project content (multiple files)</li>
+                  </ol>
+                </div>
+              </div>
+              <br />
+              <h4>Metadata</h4>
+              <ol>
+                <li>Project Names are case-sensitive and used as keys for a project's data</li>
+                <li>Process text is written (optional, maxCharacters: 500)</li> 
+                <li>Credit text is pulled from Vimeo</li>
+                <li>Thumbnail text is overlaid on the thumbnail image on the pillar page</li>  
+                <li>Main title is the large header on the project page, subtitles sit just below the main</li>  
+              </ol>
+            </Block>
+            <Block>
+              <div>
+                <h2>Strapi Information</h2> <br/>
+                  <p>Strapi is a node headless CMS framework</p>
+                  {/* {this.showFirstBlock() &&
+                    FIRST_BLOCK.map((value, key) => (
+                      <Sub key={key} {...value} underline={key === 0} bordered={key === 0} />
+                    ))} */}
+                  {!this.showFirstBlock() &&
+                    WELCOME_AGAIN_BLOCK.concat(articles).map((value, key) => (
+                      <Sub
+                        key={key}
+                        {...value}
+                        bordered={key === 0}
+                        style={key === 1 ? { marginBottom: '33px' } : {}}
+                        underline={key === 0}
+                      />
+                    ))}
+                  {this.renderButton()}
+                  <div className={styles.homePageFlex}>
+                    {FIRST_BLOCK_LINKS.map((value, key) => <BlockLink {...value} key={key} />)}
+                  </div>
+              </div>
+            </Block>
+          </div>
+
+          <div className="col-md-4">
+            <Block>
+              <div >                
+                <img src='https://media.giphy.com/media/l0HlHFRbmaZtBRhXG/giphy.gif' className={styles.zz} />
               </div>
             </Block>
             <Block>
-              <Sub {...SECOND_BLOCK} />
-              <div className={styles.homePageFlex}>
-                <div className="row" style={{ width: '100%', marginRight: '0' }}>
-                  {SOCIAL_LINKS.map((value, key) => <SocialLink key={key} {...value} />)}
-                </div>
-                <div className={styles.newsLetterWrapper}>
-                  <div>
-                    <FormattedMessage id="app.components.HomePage.newsLetter" />
-                  </div>
-                  <form onSubmit={this.handleSubmit}>
-                    <div className={cn(styles.homePageForm, 'row')}>
-                      <div className="col-md-12">
-                        <Input
-                          value={body.email}
-                          onChange={this.props.onChange}
-                          name=""
-                          placeholder="johndoe@gmail.com"
-                          error={!isEmpty(this.state.errors)}
-                        />
-                        <FormattedMessage id="app.components.HomePage.cta">
-                          {message => <button type="submit">{message}</button>}
-                        </FormattedMessage>
-                      </div>
-                    </div>
-                  </form>
-                </div>
-              </div>
+              <h2>Using the CMS</h2>
+              <br/>
+                <h4>Data Types</h4>
+                <ul>
+                  <li>Users: Employees with CMS access</li>
+                  <li>Clients: URL's dedicated to client-specific presentations</li>
+                  <li>Pillars: The-Artery's separate departments</li>
+                  <li>Projects: Individual projects in The-Artery's portfolio</li>
+                </ul>
+                <br/>
+                <h4>Notes</h4>
+                <p>
+                  *Content Type Builder plugin only available on a local server
+                </p>
             </Block>
-          </div>
-          <div className="col-lg-4 col-md-4">
-            <Block className={styles.blockShirt}>
-              <div>
-                <SupportUsTitle />
-                <FormattedMessage id="app.components.HomePage.support.content">
-                  {message => <p>{message}</p>}
-                </FormattedMessage>
-                <SupportUsCta />
-              </div>
-            </Block>
-          </div>
+            </div>
         </div>
       </div>
     );
   }
 }
+
+
+{/* <div className="col-lg-4 col-md-4">
+<Block className={styles.blockShirt}>
+  // <div>
+  //   <SupportUsTitle />
+  //   <FormattedMessage id="app.components.HomePage.support.content">
+  //     {message => <p>{message}</p>}
+  //   </FormattedMessage>
+  //   <SupportUsCta />
+  // </div>
+</Block>
+</div> */}
 
 HomePage.propTypes = {
   getArticles: PropTypes.func.isRequired,

@@ -14,7 +14,7 @@ import styles from './styles.scss';
 function WelcomeContent({ hasContent }) {
   return (
     <React.Fragment>
-      <div className={styles.iconWave}>👋</div>
+      
       {!hasContent && (
         <FormattedMessage id="app.components.HomePage.welcomeBlock.content">
           {message => (
@@ -39,6 +39,7 @@ function WelcomeContent({ hasContent }) {
           )}
         </FormattedMessage>
       )}
+
       {hasContent && (
         <FormattedMessage id="app.components.HomePage.welcomeBlock.content.again">
           {message => (

@@ -2,15 +2,18 @@
 @import '../../styles/variables/variables';
 
 .content { /* stylelint-ignore */
-  background: $content-background;
+  background-image: url('../../assets/images/overlayTexture.png');
+  background-repeat: repeat;
+  background-color: $artery-black;
   min-height: calc(100vh - #{$header-height});
   width: calc(100vw - #{$left-menu-width});
   margin-top: $header-height;
-  margin-left: $left-menu-width;
+  margin-left: $left-menu-width;  
 }
 
+
 .wrapper { /* stylelint-ignore */
-  background: $content-background;
+  background: $artery-black;
   min-height: 100%;
   width: 100%;
 }

@@ -53,8 +53,9 @@
 
   &:hover {
     color: $white;
-    background: $left-menu-link-hover;
-    border-left: 0.3rem solid $strapi-blue;
+    opacity: 1;
+    // background: $left-menu-link-hover;
+    border-left: 0.3rem solid $white;
     text-decoration: none;
   }
 
@@ -70,7 +71,7 @@
 
 .linkActive {
   color: $white !important;
-  border-left: 0.3rem solid $strapi-blue;
+  border-left: 0.3rem solid $white;
 }
 
 .linkIcon {

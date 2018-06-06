@@ -2,9 +2,10 @@
 @import "../../styles/variables/variables";
 
 .leftMenuHeader { /* stylelint-ignore */
-  background: $left-menu-link-hover;
+  // background: $left-menu-link-hover;
   height: $header-height;
-  background: linear-gradient(100deg , #1C5DE7, #1C91E7);
+  // background: linear-gradient(100deg , rgb(28, 29, 29), rgb(12, 2, 2));
+  background: $artery-black;
 }
 
 .projectName {
@@ -18,10 +19,14 @@
   letter-spacing: 0.2rem;
   color: $white;
 
-  background-image: url('../../assets/images/logo-strapi.png');
+  background-image: url('../../assets/icons/ArteryLogo.svg');
   background-repeat: no-repeat;
   background-position: center center;
-  background-size: auto 3rem;
+  background-size: auto 4.5rem;
+  transition: .7s all;
+  &:hover {
+    transform: scale(1.1);
+  }
 }
 
 .leftMenuHeaderLink {

@@ -18,8 +18,11 @@ export class Content extends React.Component { // eslint-disable-line react/pref
     const style = this.props.showLeftMenu ? styles.content : styles.wrapper;
 
     return (
+      <div className="contentTexture" >
       <div className={style}>
-        {React.Children.toArray(this.props.children)}
+
+          {React.Children.toArray(this.props.children)}
+        </div>
       </div>
     );
   }

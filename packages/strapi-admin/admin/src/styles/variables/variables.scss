@@ -11,19 +11,24 @@ $strapi-blue-darker: #18202E;
 $strapi-blue-dark: #151C2E;
 $strapi-blue: #0097f7;
 
+$artery-black : rgb(15,15,15);
+$artery-black-opacity-light : rgba(15,15,15, 0.2);
+
+$artery-white : rgb(242,242,242);
+
 // - layout
 // -- left menu
 $left-menu-width: 24rem;
-$left-menu-bg: $strapi-blue-darker;
-$left-menu-link-hover: #1C2431;
-$left-menu-link-color: #919BAE;
-$left-menu-title-color: #5B626F;
+$left-menu-bg: $artery-black;
+$left-menu-link-hover: rgba(193, 203, 218, 0.563);
+$left-menu-link-color: $strapi-gray-light;
+$left-menu-title-color: $artery-white;
 
 // -- header
 $header-height: 6rem;
 
 // -- content
-$content-background: #FAFAFB;
+// $content-background: lightblue;
+// $content-background: url('/assets/images/black_texture.png');
 
-// Import bootstrap variables
 @import "variables.bootstrap";
